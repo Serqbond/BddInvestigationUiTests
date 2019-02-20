@@ -64,10 +64,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\AddNewUserPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddNewUserPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\CreateLoginPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateLoginPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Hooks\SeleniumTestsHooks.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="POM\AddUserPage.cs" />
+    <Compile Include="POM\AdminPage.cs" />
+    <Compile Include="POM\BasePage.cs" />
+    <Compile Include="POM\LoginPage.cs" />
+    <Compile Include="POM\UserDetailsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\AddANewUserSteps.cs" />
+    <Compile Include="StepDefinitions\CreateLoginPageSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\AddNewUserPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddNewUserPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\CreateLoginPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateLoginPage.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
