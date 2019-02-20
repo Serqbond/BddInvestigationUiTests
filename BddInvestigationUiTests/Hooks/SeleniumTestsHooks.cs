@@ -32,8 +32,7 @@ namespace BddInvestigationUiTests.Hooks
                 browser = Browser.Edge;
             }
 
-            initDriver(browser);
-
+            InitDriver(browser);
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             objectContainer.RegisterInstanceAs<IWebDriver>(driver);
@@ -45,7 +44,7 @@ namespace BddInvestigationUiTests.Hooks
             driver.Quit();
         }
 
-        private void initDriver(Browser browser)
+        private void InitDriver(Browser browser)
         {
             switch (browser)
             {
