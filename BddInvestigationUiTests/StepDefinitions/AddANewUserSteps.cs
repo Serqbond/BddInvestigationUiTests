@@ -2,10 +2,6 @@
 using BddInvestigationUiTests.POM;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -43,12 +39,6 @@ namespace BddInvestigationUiTests.StepDefinitions
             adminPage.ClickAddNewButton();
         }
 
-        [When(@"I enter '(.*)'")]
-        public void WhenIEnter(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
         [When(@"I fill new user form")]
         public void WhenIFillNewUserForm(Table table)
         {
@@ -57,13 +47,18 @@ namespace BddInvestigationUiTests.StepDefinitions
             addUserPage.FillUserForm(user);
         }
 
+        [When(@"click on Cancel button")]
+        public void WhenClickOnCancelButton()
+        {
+            addUserPage.ClickCancelButton();
+        }
+
         [Then(@"user should be in the table")]
         public void ThenUserShouldBeInTheTable()
         {
             var users = userDetailsPage.GetUserList();
             Assert.IsTrue(users.Contains(testUser));
         }
-
 
         [When(@"click on create button")]
         public void WhenClickOnButton()
@@ -77,16 +72,18 @@ namespace BddInvestigationUiTests.StepDefinitions
             ScenarioContext.Current.Pending();
         }
 
-        [Then(@"'(.*)' closes")]
-        public void ThenCloses(string p0)
+        [Then(@"Add New User Page closes")]
+        public void ThenAddNewUserPageCloses()
         {
-            ScenarioContext.Current.Pending();
+            Assert.IsFalse(addUserPage.IsAddNewUserPageOpened());
         }
 
         [Then(@"user isn't added to the table")]
         public void ThenUserIsnTAddedToTheTable()
         {
-            ScenarioContext.Current.Pending();
+            driver.Navigate().GoToUrl("http://localhost:51718/Home/UserDetails");
+            var users = userDetailsPage.GetUserList();
+            Assert.IsFalse(users.Contains(testUser));
         }
     }
 }

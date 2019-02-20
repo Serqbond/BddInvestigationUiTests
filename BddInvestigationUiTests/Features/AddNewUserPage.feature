@@ -14,17 +14,15 @@ Scenario: Verify creating a new user
     Then user should be in the table
 
 @2 @negative
-Scenario Outline: Verify the canceling of a new user creation
+Scenario: Verify the canceling of a new user creation
     Given I open 'Add New User Page'
-    When I enter <userDetails>
-	And click on 'cancel' button
-    Then 'Add New User Page' closes
-    And user isn't added to the table	
-
-Examples: 
-| userDetials                  | result               |
-| Alex                         | empty                |
-| Ivanov                       | empty                |
-| user@email.com               | empty                |
-| 30/12/1990                   | empty                |
-| New York                     | empty                |
+    When I fill new user form
+	| Field       | Value          |
+	| FirstName   | John           |
+	| LastName    | Dow            |
+	| Email       | djdou@email.com |
+	| DateOfBirth | 11301991       |
+	| City        | Boston         |
+	And click on Cancel button
+    Then Add New User Page closes
+    And user isn't added to the table

@@ -84,7 +84,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
     testRunner.Given("I open a login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
-    testRunner.When("I enter correct user name and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("I enter correct user name \'admin@mail.com\' and password \'Password123!\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
     testRunner.When("I use exisiting user login and password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8

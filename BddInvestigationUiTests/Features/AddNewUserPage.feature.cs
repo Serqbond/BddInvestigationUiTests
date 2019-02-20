@@ -116,33 +116,42 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("Verify the canceling of a new user creation")]
         [NUnit.Framework.CategoryAttribute("2")]
         [NUnit.Framework.CategoryAttribute("negative")]
-        [NUnit.Framework.TestCaseAttribute("Alex", "empty", null)]
-        [NUnit.Framework.TestCaseAttribute("Ivanov", "empty", null)]
-        [NUnit.Framework.TestCaseAttribute("user@email.com", "empty", null)]
-        [NUnit.Framework.TestCaseAttribute("30/12/1990", "empty", null)]
-        [NUnit.Framework.TestCaseAttribute("New York", "empty", null)]
-        public virtual void VerifyTheCancelingOfANewUserCreation(string userDetials, string result, string[] exampleTags)
+        public virtual void VerifyTheCancelingOfANewUserCreation()
         {
-            string[] @__tags = new string[] {
-                    "2",
-                    "negative"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the canceling of a new user creation", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the canceling of a new user creation", null, new string[] {
+                        "2",
+                        "negative"});
 #line 17
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 18
     testRunner.Given("I open \'Add New User Page\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table2.AddRow(new string[] {
+                        "FirstName",
+                        "John"});
+            table2.AddRow(new string[] {
+                        "LastName",
+                        "Dow"});
+            table2.AddRow(new string[] {
+                        "Email",
+                        "djdou@email.com"});
+            table2.AddRow(new string[] {
+                        "DateOfBirth",
+                        "11301991"});
+            table2.AddRow(new string[] {
+                        "City",
+                        "Boston"});
 #line 19
-    testRunner.When("I enter <userDetails>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.And("click on \'cancel\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
-    testRunner.Then("\'Add New User Page\' closes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
+    testRunner.When("I fill new user form", ((string)(null)), table2, "When ");
+#line 26
+ testRunner.And("click on Cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+    testRunner.Then("Add New User Page closes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
     testRunner.And("user isn\'t added to the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -31,6 +31,13 @@ namespace BddInvestigationUiTests.StepDefinitions
             loginPage.SetUserName("admin@mail.com").SetUserPazzword("Password123!");
         }
 
+        [When(@"I enter correct user name '(.*)' and password '(.*)'")]
+        public void WhenIEnterCorrectUserNameAndPassword(string userName, string password)
+        {
+            loginPage.SetUserName(userName).SetUserPazzword(password);
+        }
+
+
         [When(@"I use exisiting user login and password")]
         public void WhenIUseExisitingUserLoginAndPassword()
         {
