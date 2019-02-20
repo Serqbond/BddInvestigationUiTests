@@ -26,8 +26,8 @@ namespace BddInvestigationUiTests.StepDefinitions
             loginPage = new LoginPage(driver);
         }
 
-        [Given(@"I open '(.*)'")]
-        public void GivenIOpen(string p0)
+        [Given(@"I open Add New User Page")]
+        public void GivenIOpenAddNewUserPage()
         {
             driver.Navigate().GoToUrl("http://localhost:51718/Home/Admin");
             if (driver.Url.Contains("Home/LogIn"))
@@ -64,13 +64,7 @@ namespace BddInvestigationUiTests.StepDefinitions
         public void WhenClickOnButton()
         {
             addUserPage.ClickCreateNewUserButton();
-        }
-
-        [Then(@"Alex should be in the table")]
-        public void ThenAlexShouldBeInTheTable()
-        {
-            ScenarioContext.Current.Pending();
-        }
+        }        
 
         [Then(@"Add New User Page closes")]
         public void ThenAddNewUserPageCloses()

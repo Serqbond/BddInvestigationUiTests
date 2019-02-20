@@ -2,7 +2,7 @@
 
 @1 @positive
 Scenario: Verify creating a new user
-    Given I open 'Add New User Page'
+    Given I open Add New User Page
 	When I fill new user form
 	| Field       | Value          |
 	| FirstName   | Ivan           |
@@ -15,7 +15,7 @@ Scenario: Verify creating a new user
 
 @2 @negative
 Scenario: Verify the canceling of a new user creation
-    Given I open 'Add New User Page'
+    Given I open Add New User Page
     When I fill new user form
 	| Field       | Value          |
 	| FirstName   | John           |
