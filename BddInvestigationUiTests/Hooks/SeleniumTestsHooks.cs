@@ -21,7 +21,7 @@ namespace BddInvestigationUiTests.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            string ciDiver = Environment.GetEnvironmentVariable("server.driver");
+            string ciDiver = Environment.GetEnvironmentVariable("driver");
 
             if (ciDiver == "ieexplorer")
             {

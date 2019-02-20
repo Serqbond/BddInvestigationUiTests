@@ -8,7 +8,7 @@ Scenario: Verify creating a new user
 	| FirstName   | Ivan           |
 	| LastName    | Ivanov         |
 	| Email       | user@email.com |
-	| DateOfBirth | 12301990     |
+	| DateOfBirth | 12301990       |
 	| City        | Boston         |
 	And click on create button
     Then user should be in the table
